@@ -3,11 +3,8 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from django.conf import settings
 from django.core.mail import send_mail
-
-# Create your views here.
 from .models import User
 from .serializers import UserSerializer
-import json
 import pickle
 
 @api_view(['GET'])
@@ -62,7 +59,7 @@ def makeDiagnosis(request):
     serializer = UserSerializer(user, many=False) 
 
     subject = 'DIABETES ASSESSMENT'
-    message = f'Hi {name}, we would like to inform you of the results of your recent online assessment which are that {res}. We hope that yould will still seek medical evaluation as these results are highly subjective'
+    message = f'Hi {name}, we would like to inform you of the results of your recent online assessment which are that {res}. We hope that would will still seek medical evaluation as these results are highly subjective'
     email_from = settings.EMAIL_HOST_USER
     recipient_list = [email, ]
     send_mail( subject, message, email_from, recipient_list )
