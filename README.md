@@ -1,5 +1,6 @@
-##Basic Implementation for react
+## Basic Implementation for react
 
+``` javascript
 import React from 'react'
 
 const Form = () => {
@@ -71,3 +72,4 @@ const Form = () => {
 }
 
 export default Form
+```
