@@ -1,0 +1,1 @@
+web: gunicorn mldiabetes.wsgi --log-file -
